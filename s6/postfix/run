@@ -68,6 +68,9 @@ postconf -e myorigin="${MAILNAME}"
 postconf -e myhostname="${MAILNAME}"
 postconf -e mydestination="${MAILNAME}"
 
+echo "postfix >> Setting inet_interfaces to ${INET_INTERFACES}"
+postconf -e inet_interfaces="${INET_INTERFACES}"
+
 echo "postfix >> Setting mynetworks to ${MYNETWORKS}"
 postconf -e mynetworks="${MYNETWORKS}"
 
