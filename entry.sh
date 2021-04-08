@@ -9,6 +9,10 @@ if [ -z "$MAILNAME" ]; then
     exit 128
 fi
 
+if [ -z "$INET_INTERFACES" ]; then
+    export INET_INTERFACES='127.0.0.1'
+fi
+
 if [ -z "$MYNETWORKS" ]; then
     export MYNETWORKS='127.0.0.0/8, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16'
     echo "smtp >> Warning: MYNETWORKS not specified, allowing all private IPs"
